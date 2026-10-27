@@ -1,29 +1,46 @@
 # Vocal Practice Player — GitHub Pages
 
-Публичные документы хранятся отдельно от исходников приложения и локальных черновиков `legal/`.
+Public support and terms website for Vocal Practice Player. This repository is stored in the `pages/` folder, alongside the separate iOS app project in `../vocal-practice-player/`.
 
-- `index.html` — главная страница.
-- `terms/index.html` — условия и ссылка на стандартное EULA Apple.
-- `support/index.html` — поддержка, FAQ и maksim.karonchyk@gmail.com.
-- `assets/styles.css` — общие стили без внешних шрифтов, скриптов и аналитики.
+## Contents
 
-## Публикация
+- `index.html` — home page.
+- `terms/index.html` — app information, subscription terms, and a link to Apple’s Standard EULA.
+- `support/index.html` — support contact and frequently asked questions.
+- `assets/styles.css` — shared responsive styles, with no external fonts, scripts, or analytics.
+- `assets/app-icon.png` — the app’s actual iOS icon, used in the header and as the website icon.
+- `.nojekyll` — serves the site as static files without Jekyll processing.
 
-Текущий remote: `irakoronchik/vocal-practice-player`. Ожидаемые адреса после публикации:
+Support email: [maksim.karonchyk@gmail.com](mailto:maksim.karonchyk@gmail.com).
 
-- https://irakoronchik.github.io/vocal-practice-player/
-- https://irakoronchik.github.io/vocal-practice-player/terms/
-- https://irakoronchik.github.io/vocal-practice-player/support/
+## GitHub Pages deployment
 
-1. В GitHub → Settings → Pages выбрать Source: **GitHub Actions**. Доступность Pages для приватного репозитория зависит от тарифа GitHub.
-2. Отправить изменения в `main`. Workflow `.github/workflows/pages.yml` публикует только папку `pages/`. Можно запустить его вручную через Actions.
-3. Дождаться успешного deployment и проверить оба публичных URL без авторизации.
-4. Указать `/support/` в поле Support URL в App Store Connect. Ссылку `/terms/` можно добавить в описание приложения; лицензия остаётся стандартным EULA Apple.
+Repository: [un3solka/vocal-practice-player](https://github.com/un3solka/vocal-practice-player).
 
-URL в приложении заданы в `AppLinks` в `VocalPracticePlayer/UI/StudioViews.swift`. При переносе репозитория или подключении домена обновить их одновременно с адресами здесь.
+The website files are at this repository’s root. In GitHub **Settings → Pages**, choose **Deploy from a branch**, select the branch containing these files, and use **/ (root)** as the publishing folder. Push website updates to that branch and wait for the Pages deployment to finish.
 
-Эти файлы сами по себе не подтверждают включение Pages или успешную публикацию. Политика конфиденциальности остаётся встроенным черновиком в `legal/`: для её публикации ещё нужны сведения, перечисленные в `legal/RELEASE-CHECKLIST.md`.
+Website URLs:
 
-## Локальный просмотр
+- [Home](https://un3solka.github.io/vocal-practice-player/)
+- [Terms of Use](https://un3solka.github.io/vocal-practice-player/terms/)
+- [Support](https://un3solka.github.io/vocal-practice-player/support/)
 
-Из корня проекта: `python3 -m http.server 8080 --directory pages`, затем открыть http://localhost:8080/. Для проверки ссылки внутри приложения нужен опубликованный HTTPS-сайт.
+Verify the public URLs without signing in after deployment. Use the support page URL as the **Support URL** in App Store Connect. The terms page links to Apple’s Standard EULA; it does not replace that agreement.
+
+The app’s website URLs are defined in `AppLinks` in the separate app project’s `VocalPracticePlayer/UI/StudioViews.swift`. Keep those URLs aligned with the website when changing repository ownership or adding a custom domain.
+
+The privacy policy remains an in-app draft in the app project’s `legal/` folder. Its publication requirements are listed in `legal/RELEASE-CHECKLIST.md` in that project.
+
+## Updating the icon
+
+Copy `VocalPracticePlayer/Assets.xcassets/AppIcon.appiconset/AppIcon.png` from the app project to `assets/app-icon.png` whenever the app icon changes. All website pages share this asset.
+
+## Local preview
+
+From this repository’s root:
+
+```sh
+python3 -m http.server 8080
+```
+
+Open [localhost:8080](http://localhost:8080/). The links inside the iOS app use the published HTTPS website.
