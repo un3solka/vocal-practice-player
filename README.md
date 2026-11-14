@@ -7,6 +7,7 @@ Public support and terms website for Vocal Practice Player. This repository is s
 - `index.html` — home page.
 - `terms/index.html` — app information, subscription terms, and a link to Apple’s Standard EULA.
 - `support/index.html` — support contact and frequently asked questions.
+- `privacy/index.html` — privacy policy for the app and website.
 - `assets/styles.css` — shared responsive styles, with no external fonts, scripts, or analytics.
 - `assets/app-icon.png` — the app’s actual iOS icon, used in the header and as the website icon.
 - `.nojekyll` — serves the site as static files without Jekyll processing.
@@ -24,12 +25,13 @@ Website URLs:
 - [Home](https://un3solka.github.io/vocal-practice-player/)
 - [Terms of Use](https://un3solka.github.io/vocal-practice-player/terms/)
 - [Support](https://un3solka.github.io/vocal-practice-player/support/)
+- [Privacy Policy](https://un3solka.github.io/vocal-practice-player/privacy/)
 
 Verify the public URLs without signing in after deployment. Use the support page URL as the **Support URL** in App Store Connect. The terms page links to Apple’s Standard EULA; it does not replace that agreement.
 
 The app’s website URLs are defined in `AppLinks` in the separate app project’s `VocalPracticePlayer/UI/StudioViews.swift`. Keep those URLs aligned with the website when changing repository ownership or adding a custom domain.
 
-The privacy policy remains an in-app draft in the app project’s `legal/` folder. Its publication requirements are listed in `legal/RELEASE-CHECKLIST.md` in that project.
+After deployment, use the Privacy Policy URL in App Store Connect. The app’s `legal/` folder keeps the localized offline drafts.
 
 ## Updating the icon
 
